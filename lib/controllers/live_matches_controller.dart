@@ -1,7 +1,7 @@
-import 'package:cricket/controllers/tempLiveMatchesData.dart';
+import 'package:cricket/controllers/tempData.dart';
 import 'package:get/get.dart';
 import '../models/matches_list_model.dart';
-import '../services/cricket_score_service.dart';
+import '../services/matches_list_service.dart';
 import '../utils/seriesAdWrapper_extractor.dart';
 import '../utils/time_convertor.dart';
 
@@ -18,7 +18,7 @@ class LiveMatchesController extends GetxController {
 
   fetchLiveMatches() {
     // data = await  MatchesListService.fetchMatchesList();
-    Map<String, dynamic> extractedData = extractAndSortMatches(tempData);
+    Map<String, dynamic> extractedData = extractAndSortMatches(tempMatchesListData);
 
     data = (extractedData["matches"] as List)
         .map((json) => MatchDetails.fromJson(json))

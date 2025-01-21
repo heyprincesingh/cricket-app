@@ -1,9 +1,9 @@
-import 'package:cricket/controllers/match_details_controller.dart';
-import 'package:cricket/utils/time_convertor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../controllers/match_details_controller.dart';
 import '../models/matches_list_model.dart';
+import '../utils/time_convertor.dart';
 
 class MatchDetailsScreen extends StatelessWidget {
   const MatchDetailsScreen({super.key});

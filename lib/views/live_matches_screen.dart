@@ -10,7 +10,6 @@ class LiveMatchesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final LiveMatchesController controller = Get.put(LiveMatchesController());
-    const temp = "live";
     return Scaffold(
       appBar: AppBar(
         title: const Text(
