@@ -25,6 +25,16 @@ class MatchesListApi {
       rethrow;
     }
   }
+
+  // Fetch upcoming matches
+  static Future<http.Response> fetchUpcomingMatches() async {
+    try {
+      final response = await http.get(Uri.parse(upcomingMatches), headers: headers);
+      return response;
+    } catch (error) {
+      rethrow;
+    }
+  }
 }
 
 class MatchDetailsApi {

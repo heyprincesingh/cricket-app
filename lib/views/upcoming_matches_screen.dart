@@ -1,24 +1,24 @@
-import '../controllers/live_matches_controller.dart';
-import '../utils/MatchListWidget.dart';
+import '../controllers/upcoming_matches_controller.dart';
+import 'package:cricket/utils/MatchListWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LiveMatchesScreen extends StatelessWidget {
-  const LiveMatchesScreen({super.key});
+class UpcomingMatchesScreen extends StatelessWidget {
+  const UpcomingMatchesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LiveMatchesController controller = Get.put(LiveMatchesController());
+    final UpcomingMatchesController controller = Get.put(UpcomingMatchesController());
 
     Future<void> _onRefresh() async {
       controller.dataLoaded.value = false;
-      await controller.fetchLiveMatches();
+      await controller.fetchUpcomingMatches();
     }
 
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Live Cricket",
+          "Upcoming Matches",
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w600,

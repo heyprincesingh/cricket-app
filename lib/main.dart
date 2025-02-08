@@ -1,5 +1,5 @@
 import 'package:cricket/views/live_matches_screen.dart';
-import 'package:cricket/views/recent_matches_screen.dart';
+import 'package:cricket/views/upcoming_matches_screen.dart';
 import 'package:cricket/views/affiliate_screen.dart';
 import 'package:cricket/views/splash_screen.dart';
 import 'views/match_details_screen.dart';
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/nav', page: () => const NavScreen()),
         GetPage(name: '/home', page: () => const LiveMatchesScreen()),
         GetPage(name: '/matchDataScreen', page: () => const MatchDetailsScreen()),
-        GetPage(name: '/series', page: () => const RecentMatchesScreen()),
+        GetPage(name: '/series', page: () => const UpcomingMatchesScreen()),
         GetPage(name: '/affiliate', page: () => const AffiliateScreen()),
       ],
     );

@@ -3,19 +3,19 @@ import '../models/matches_list_model.dart';
 import '../utils/time_convertor.dart';
 import 'package:get/get.dart';
 
-class LiveMatchesController extends GetxController {
+class UpcomingMatchesController extends GetxController {
   RxBool dataLoaded = false.obs;
   List<MatchDetails>? data;
   String? listLastUpdated;
 
   @override
   void onInit() {
-    fetchLiveMatches();
+    fetchUpcomingMatches();
     super.onInit();
   }
 
-  fetchLiveMatches() async {
-    Map<String, dynamic>? response = await MatchesListService.fetchMatchesList(MatchType.live);
+  fetchUpcomingMatches() async {
+    Map<String, dynamic>? response = await MatchesListService.fetchMatchesList(MatchType.upcoming);
     if (response != null) {
       data = response["matches"];
       listLastUpdated = convertTimestampToIST(response["responseLastUpdated"]);
