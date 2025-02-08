@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/nav', page: () => const NavScreen()),
         GetPage(name: '/home', page: () => const LiveMatchesScreen()),
         GetPage(name: '/matchDataScreen', page: () => const MatchDetailsScreen()),
-        GetPage(name: '/series', page: () => const UpcomingMatchesScreen()),
+        GetPage(name: '/upcoming', page: () => const UpcomingMatchesScreen()),
         GetPage(name: '/affiliate', page: () => const AffiliateScreen()),
       ],
     );
