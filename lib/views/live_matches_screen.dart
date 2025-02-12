@@ -1,5 +1,7 @@
+import 'package:cricket/utils/enums.dart';
+
 import '../controllers/live_matches_controller.dart';
-import '../utils/MatchListWidget.dart';
+import '../utils/match_list_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -39,7 +41,7 @@ class LiveMatchesScreen extends StatelessWidget {
                 ? ListView.builder(
               itemCount: controller.data!.length,
               itemBuilder: (context, index) {
-                return MatchDetailsWidget(match: controller.data![index]);
+                return MatchDetailsWidget(listType: MatchType.live, match: controller.data![index]);
               },
             )
                 : const Center(

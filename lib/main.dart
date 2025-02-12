@@ -1,7 +1,7 @@
-import 'package:cricket/views/live_matches_screen.dart';
-import 'package:cricket/views/upcoming_matches_screen.dart';
-import 'package:cricket/views/affiliate_screen.dart';
-import 'package:cricket/views/splash_screen.dart';
+import '../views/live_matches_screen.dart';
+import '../views/upcoming_matches_screen.dart';
+import '../views/affiliate_screen.dart';
+import '../views/splash_screen.dart';
 import 'views/match_details_screen.dart';
 import 'views/nav_screen.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/', page: () => const SplashScreen()),
         GetPage(name: '/nav', page: () => const NavScreen()),
         GetPage(name: '/home', page: () => const LiveMatchesScreen()),
-        GetPage(name: '/matchDataScreen', page: () => const MatchDetailsScreen()),
+        GetPage(name: '/matchDetailsScreen', page: () => const MatchDetailsScreen()),
         GetPage(name: '/upcoming', page: () => const UpcomingMatchesScreen()),
         GetPage(name: '/affiliate', page: () => const AffiliateScreen()),
       ],

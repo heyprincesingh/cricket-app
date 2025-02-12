@@ -1,4 +1,4 @@
-import 'package:cricket/config/env.dart';
+import '../config/env.dart';
 import 'package:http/http.dart' as http;
 
 class MatchesListApi {

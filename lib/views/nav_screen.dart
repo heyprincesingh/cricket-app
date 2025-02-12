@@ -1,4 +1,4 @@
-import 'package:cricket/controllers/nav_controller.dart';
+import '../controllers/nav_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

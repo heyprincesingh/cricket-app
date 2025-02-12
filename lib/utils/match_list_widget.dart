@@ -1,12 +1,14 @@
-import 'package:cricket/models/matches_list_model.dart';
+import '../models/matches_list_model.dart';
+import 'package:cricket/utils/enums.dart';
 import 'package:flutter/material.dart';
 import '../utils/time_convertor.dart';
 import 'package:get/get.dart';
 
 class MatchDetailsWidget extends StatelessWidget {
-  final MatchDetails match; // Pass the match details data here
+  final MatchDetails match;
+  final MatchType listType;
 
-  const MatchDetailsWidget({super.key, required this.match});
+  const MatchDetailsWidget({super.key, required this.listType, required this.match});
 
   @override
   Widget build(BuildContext context) {
@@ -14,8 +16,11 @@ class MatchDetailsWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top: 8, left: 8, right: 8),
       child: GestureDetector(
         onTap: () {
-          if (match.matchInfo!.state != "Upcoming") {
-            Get.toNamed('/matchDataScreen', arguments: match);
+          if (listType == MatchType.live) {
+            Get.toNamed(
+              '/matchDetailsScreen',
+              arguments: {"matchId": match.matchInfo!.matchId, "matchVenue": "${match.matchInfo!.venueInfo!.ground!}, ${match.matchInfo!.venueInfo!.city}"},
+            );
           }
         },
         child: Column(

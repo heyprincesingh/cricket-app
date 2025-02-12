@@ -1,9 +1,8 @@
 import 'dart:convert';
-import '../models/matches_list_model.dart';
-import '../config/api_endpoints.dart';
-import '../utils/seriesAdWrapper_extractor.dart';
+import 'package:cricket/utils/enums.dart';
 
-enum MatchType { live, upcoming }
+import '../config/api_endpoints.dart';
+import '../utils/data_conversion.dart';
 
 class MatchesListService {
   static Future<Map<String, dynamic>?> fetchMatchesList(MatchType type) async {
@@ -11,7 +10,7 @@ class MatchesListService {
       final response = type == MatchType.live ? await MatchesListApi.fetchLiveMatches() : await MatchesListApi.fetchUpcomingMatches();
       if (response.statusCode == 200) {
         Map<String, dynamic> data = jsonDecode(response.body);
-        Map<String, dynamic> extractedData = extractAndSortMatches(data);
+        Map<String, dynamic> extractedData = extractAndSortMatches(type, data);
         return extractedData;
       } else {
         print("Failed to fetch data: ${response.statusCode}");
